@@ -29,4 +29,4 @@ This repository is a collection of files required to get Zabbix to use low-level
 
 ### Who do I talk to? ###
 
-* Andrew Shaw, a@ashaw.uk
+* Andrew Shaw
