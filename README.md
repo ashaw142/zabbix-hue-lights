@@ -22,11 +22,3 @@ This repository is a collection of files required to get Zabbix to use low-level
 #### Zabbix Server Config ####
 * Import the `template-philips-hue-bulbs.xml` template file into Zabbix
 * Attach this template to the host running the agent you have configured.
-
-### Contribution guidelines ###
-
-* Feel free
-
-### Who do I talk to? ###
-
-* Andrew Shaw
