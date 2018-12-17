@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2018-12-15T19:04:37Z</date>
+    <date>2018-12-17T09:40:07Z</date>
     <groups>
         <group>
             <name>Philips Hue</name>
@@ -119,7 +119,7 @@
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
-                            <expression>{Template Philips Hue Bulbs:philips.hue.bulb[reachable,{#BULBID}].last()}&lt;&gt;1</expression>
+                            <expression>{Template Philips Hue Bulbs:philips.hue.bulb[reachable,{#BULBID}].max(#3)}=0</expression>
                             <recovery_mode>0</recovery_mode>
                             <recovery_expression/>
                             <name>Philips Hue bulb {#BULBNAME} is unreachable</name>
