@@ -30,15 +30,14 @@ $strBaseUrl = "http://$strHueHost/api/$strHueUser/";
 function discoverBulbs($strBaseUrl) {
 	// call the API for list of lights
 	$objHueLightsList = json_decode(file_get_contents($strBaseUrl."lights"));
-	// how many lights were listed?
-	$intCountOfLights = count((array) $objHueLightsList);
 	//Initialise a data object
 	$arrDiscoveredBulbs = array();
 	// iterate through and format for Zabbix LLD
-	for ($i = 1; $i <= $intCountOfLights; $i++) {
+	foreach($objHueLightsList as $lightId => $light)
+	{
 		$arrDiscoveredBulbs['data'][] = array(
-			'{#BULBID}' => $i,
-			'{#BULBNAME}' => $objHueLightsList->{$i}->name,
+			'{#BULBID}' => $lightId,
+			'{#BULBNAME}' => $light->name,
 		);
 	}
 	// Return the discovered bulbs in JSON for Zabbix
